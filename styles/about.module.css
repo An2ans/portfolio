@@ -2,7 +2,7 @@
     min-height: 80vh;
     display: grid;
     grid-template-columns: 10% 40% 40% 10%;
-    grid-template-rows: 40% 40% auto;
+    grid-template-rows: 40% 40% 20%;
     
     background: rgba( 65, 117, 5, 0.3 );
     box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
@@ -14,8 +14,14 @@
     }
 
 .imageContainer{
+    display: flex;
     align-items: center;
     justify-content: center;
+    margin: 0.5rem auto;
+}
+.imageContainer img{
+    border-radius: 50%;
+
 }
 .arrowContainer{
     display:flex;
@@ -39,13 +45,24 @@
 
 
 .text1{
-    text-align: center;
+    text-align:justify;
+    margin: 10px auto;
     padding: 0.5rem 1rem;
+    font-size: 1rem;
+    line-height: 1.5;
 }
 
 .text2{
-    text-align: center;
+    text-align:justify;
+    margin: 10px auto;
     padding: 0.5rem 1rem;
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+.text2 a{
+    color: tomato;
+    cursor: pointer;
 }
 
 .footer{

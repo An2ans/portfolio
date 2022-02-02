@@ -1,0 +1,61 @@
+.main {
+    min-height: 80vh;
+    display: grid;
+    grid-template-columns: 15% 70% 15%;
+    grid-template-rows: 20% auto ;
+
+    background: rgba( 65, 117, 5, 0.3 );
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 7px );
+    -webkit-backdrop-filter: blur( 7px );
+    border-radius: 10px;
+    border: 1px solid rgba(63, 46, 46, 0.18);
+
+}
+
+.arrowContainer{
+    display:flex;
+    justify-content: center;
+    align-items:center;
+
+}
+
+.arrowContainer i{
+    font-size: 3.5rem;
+    cursor: pointer;
+    
+}
+
+.title{
+    text-align: center;
+    font-size: 1.5rem;
+}
+
+.title a:hover{
+    text-decoration: underline;
+    color:blue;
+}
+
+.mainDiv{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+
+}
+
+.projectContainer{
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.projectContainer a{
+    cursor: pointer;
+}
+
+.projectName{
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+
+.description{
+    font-size: 1rem;
+}
