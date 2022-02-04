@@ -42,9 +42,6 @@ export default function Contact() {
         </div>
         
       </main>
-      <footer className={styles.footer}>
-        <p>Esto es el footer</p>
-      </footer>
     </div>
-  )
+  );
 }

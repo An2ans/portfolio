@@ -1,8 +1,7 @@
-/* eslint-disable react/no-unescaped-entities */
 import Head from 'next/head';
 import Image from 'next/image';
-import Link from "next/link";
 import styles from '../styles/Home.module.css';
+import Arrow from "../components/arrow";
 
 
 export default function Home() {
@@ -16,19 +15,15 @@ export default function Home() {
       </Head>
 
       <main className={styles.main}>
-        
-        <div></div>
-        <div></div>
-        <div></div>
-        <div className={styles.arrowContainer}>
-          <Link href="projects" passHref>
-            <i className="fas fa-angle-double-left"></i>
-          </Link>
+        <div className={styles.leftSide}>
+          <p>To My Projects</p>
+          <Arrow href="projects" arrow="left" />
         </div>
         <div className={styles.mainDiv}>
-          <div >
-            <h1 className={styles.hi}>Hi</h1>
-            <h1>I'm </h1>
+          <div className={styles.hi}>
+            
+            {/* eslint-disable-next-line react/no-unescaped-entities */}
+            <h1>Hi <br></br><br></br> I'm </h1>
           </div>
           <h1 className={styles.name}>Antonio Beltrán</h1>
           <div className={styles.imageContainer}>
@@ -36,25 +31,20 @@ export default function Home() {
           </div>
           <p>A Web Developer</p>
         </div>
-        <div className={styles.arrowContainer}>
-          <Link href="about" passHref>
-              <i className="fas fa-angle-double-right"></i>
-          </Link>
+        <div className={styles.rightSide}>
+          <p>To About Me</p>
+          <Arrow href="about" arrow="right" />
         </div>
         <div></div>
         <div>
           <p className={styles.instructions}>Please, select the page that you would like to visit on the header, or click on the arrows to know more about me.</p>
-          <div className={styles.arrowContainer}>
-            <Link href="contact" passHref>
-                <i className="fas fa-angle-double-down"></i>
-            </Link>
+          <div className={styles.bottomSide}>
+            <p>To Contact Me</p>
+            <Arrow arrow="down" href="contact" />
           </div>
         </div>
         <div></div>
       </main>
-      <footer className={styles.footer}>
-        <p>Esto es el footer</p>
-      </footer>
     </div>
-  )
+  );
 }

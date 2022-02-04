@@ -1,9 +1,10 @@
+
 .main {
     min-height: 80vh;
     display: grid;
-    grid-template-columns: 10% 40% 40% 10%;
-    grid-template-rows: 40% 40% 20%;
-    
+    grid-template-columns: 15% 70% 15%;
+    grid-template-rows: auto 20%;
+
     background: rgba( 65, 117, 5, 0.3 );
     box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
     backdrop-filter: blur( 7px );
@@ -13,33 +14,35 @@
     
     }
 
+
+.mainDiv{
+    display: grid;
+    grid-auto-flow: row;
+
+}
+
 .imageContainer{
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 0.5rem auto;
+    margin: 1rem auto;
 }
 .imageContainer img{
     border-radius: 50%;
 
 }
-.arrowContainer{
-    display:flex;
-    justify-content: center;
+.leftSide, .rightSide, .bottomSide {
+    display: flex;
     align-items:center;
+    justify-content: center;
+    flex-direction: column;
+
 }
-.arrowContainer i, .arrowContainerDown i{
-    font-size: 3.5rem;
-    cursor: pointer;
-    
+.leftSide, .rightSide, .bottomSide p{
+    font-size: 0.8rem;
+    text-align: center;
 }
 
-.arrowContainerDown{
-    display:flex;
-    align-items:flex-end;
-    flex-direction: column;
-    padding-top: 15%;
-}
 
 
 
@@ -61,18 +64,30 @@
 }
 
 .text2 a{
-    color: tomato;
+    color: rgba(210, 223, 32, 0.911);
     cursor: pointer;
 }
 
-.footer{
-    margin: 0;
-    max-height: 10vh;
-    min-height: 5vh;
+.text2 a:hover{
+    text-decoration: underline;
+}
+
+
+@media (min-width: 640px){
+    .main {
+        min-height: 85vh;
+        grid-template-columns: 15% 70% 15%;
+        grid-template-rows: auto 20%;
+    
+    }
+
+    .mainDiv{
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        
+        
+    
+    }
+    
 
 }
-  
-  .footer p{
-    margin: 0;
-  }
-  

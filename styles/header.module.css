@@ -3,42 +3,56 @@ height: 8vh;
 width: 100%;
 display: flex;
 flex-wrap: wrap;
-justify-content: space-between;
-background: tomato;
-@media screen and (max-width: 800px){
-    height: 60px;
-    padding: 10px;
-    margin-bottom: 20px;
-    }
+justify-content:space-between;
+background: black;
+opacity: 0.8;
+font-size: 1rem;
+font-weight: bold;
 }
 
 .logoContainer{
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     height: 100%;
     width: 70px;
-    padding: 25px;
     
-    @media screen and (max-width: 800px){
-    width: 50px;
-    padding: 0px;
-    }
 }
 
 .optionsContainer{
-    width: 50%;
+    width: 80%;
     height: 100%;
     display: flex;
     align-items: center;
-    justify-content: flex-end;
+    justify-content: space-evenly;
     
-    @media screen and (max-width: 800px){
-    width: 80%;
-    }
     
 }
 
 .options{
-padding: 10px 15px;
-margin: 0 20px;
-cursor: pointer;
+    display: flex;
+    margin: auto 40px;
+    cursor: pointer;
 
+}
+
+.options:hover{
+    border-bottom: 1px solid #fff;
+}
+
+
+@media (min-width: 640px) {
+    .logoContainer{
+    }
+
+}
+@media (min-width: 1280px){
+    .optionsContainer{
+        width: 60%;
+        
+    }
+    .logoContainer{
+        margin-left: 40px;
+    }
 }
