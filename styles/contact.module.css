@@ -1,8 +1,7 @@
 .main {
-    min-height: 85vh;
+    min-height: 90vh;
     display: grid;
     grid-template-columns: 15% 70% 15%;
-    grid-template-rows: 15% 85%;
 
     background: rgba( 65, 117, 5, 0.3 );
     box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
@@ -14,16 +13,18 @@
 }
 
 
-.arrowContainer{
-    display:flex;
-    justify-content: center;
+.leftSide, .rightSide, .bottomSide {
+    display: flex;
     align-items:center;
+    justify-content: center;
+    flex-direction: column;
+
 }
-.arrowContainer i{
-    font-size: 3.5rem;
-    cursor: pointer;
-    
+.leftSide, .rightSide, .bottomSide p{
+    font-size: 0.8rem;
+    text-align: center;
 }
+
 
 .contactForm{
     font-size: 1rem;
@@ -35,6 +36,7 @@
 }
 
 .textContainer h2{
+    font-size: 1rem;
     display: flex;
     margin: 1rem auto;
     justify-content: center;
@@ -44,15 +46,15 @@
 .contactForm input{
     display: flex;
     flex-direction: column;
-    margin: 1rem auto;
+    margin: 0 auto;
     height: 2.5rem;
-    width: 50%;
+    width: 80%;
     font-size: 1rem;
 } 
 .contactForm textarea{
     display: flex;
     flex-direction: column;
-    margin: 1rem auto;
+    margin: 20px auto;
     height: 9rem;
     width: 80%;
     font-size: 1rem;
@@ -62,8 +64,8 @@
 .contactForm label{
     display: flex;
     flex-direction: column;
-    margin: 0 auto;
-    width: 50%;
+    margin: 20px auto;
+    width: 80%;
 
 }
 
@@ -77,9 +79,39 @@
     align-items: center;
     font-size: 1rem;
     font-weight: bold;
+    border-radius: 20px;
 
 }
 
+.submitBtn:hover{
+    background-color: rgba(210, 223, 32, 0.911);
 
+}
+
+@media (min-width: 640px) {
+
+    .contactForm input{
+        margin: 1rem auto;
+        width: 50%;
+    }
+    .contactForm label{
+        width: 50%;
+    
+    }
+    
+
+}
+
+@media (min-width: 1024px) {
+    .submitBtn{
+        width: 7rem;
+        font-size: 1.2rem;
+    }
+    .contactForm textarea{
+        width: 50%;
+    }
+
+
+}
 
 

@@ -27,7 +27,7 @@
     justify-content: center;
     margin: 1rem auto;
 }
-.imageContainer img{
+.imageContainer .profile{
     border-radius: 50%;
 
 }
@@ -47,15 +47,7 @@
 
 
 
-.text1{
-    text-align:justify;
-    margin: 10px auto;
-    padding: 0.5rem 1rem;
-    font-size: 1rem;
-    line-height: 1.5;
-}
-
-.text2{
+.text1, .text2{
     text-align:justify;
     margin: 10px auto;
     padding: 0.5rem 1rem;
@@ -89,5 +81,18 @@
     
     }
     
+
+}
+
+@media (min-width: 1024px){
+
+    .text1, .text2{
+        text-align:justify;
+        margin: 10px auto;
+        padding: 0.5rem 1rem;
+        font-size: 1.2rem;
+        line-height: 1.5;
+    }
+
 
 }

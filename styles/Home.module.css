@@ -60,6 +60,10 @@
   align-self: center;
 }
 
+.name:hover{
+  text-decoration: underline;
+}
+
 
 .mainDiv h1, .mainDiv p, .mainDiv div{
   justify-self: center;
@@ -132,5 +136,8 @@
 }
 
 @media (min-width: 1280px){
+  .mainDiv{
+    margin: 80px 4rem;
+  }
 
 }

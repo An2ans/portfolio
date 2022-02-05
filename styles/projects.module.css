@@ -78,17 +78,20 @@
 
 .description{
     font-size: 1rem;
+    text-align: justify;
+    padding: 5px 10px;
 }
 
 @media (min-width: 640px) {
     .main {
         min-height: 90vh;
-        max-height:100vh;
         grid-template-columns: 15% 70% 15%;
     
     }
     .projectsContainer{
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(auto, 1fr)
+
     }
 
 
@@ -96,7 +99,18 @@
     .title{
         font-size: 1.5rem;
         line-height: 1.2;
-        margin: 20px auto 0 auto;
+        margin: 20px auto;
     }
 
+}
+
+@media (min-width: 1024px){
+    .projectsContainer{
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(auto, 1fr)
+    }
+
+    .title{
+        margin: 40px auto;
+    }
 }

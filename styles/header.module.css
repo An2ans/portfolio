@@ -46,6 +46,11 @@ font-weight: bold;
     .logoContainer{
     }
 
+    .options:hover{
+        border-bottom: 2px solid #fff;
+    }
+    
+
 }
 @media (min-width: 1280px){
     .optionsContainer{

@@ -9,7 +9,7 @@ export default function Projects() {
   return (
     <div className={styles.container}>
       <Head>
-        <title>My Projects</title>
+        <title>My Projects</title>    
       </Head>
 
       <main className={styles.main}>
@@ -27,21 +27,22 @@ export default function Projects() {
               <a href="https://crown-project.herokuapp.com/" >
                 <Image src="/crwn-project.png" width={200} height={200} alt="Crown Clothing e-commerce website"></Image>
               </a>
-              <p className={styles.description}> Lorem lorem or o fj  jfief f jdfdhrem lor o fj  jfief f lor o fj  jfief f jdfdhrem lor o fj  jfief f jdfdhfud df fud df dfd fdfsdfod h</p>
+              <p className={styles.description}>Crown Clothing is an e-commerce website developed using React components. I am using Redux Sagas and hooks for state management, Stripe for payments system, and Firebase for auth and database. This was the final project from the course Complete React Developer 2022 by ZTM Academy. </p>
             </div>
             <div className={styles.projectContainer}>
               <h2 className={styles.projectName}>Keeper App</h2>
               <a href="https://an2ans.github.io/Keeper-app/" >
                 <Image src="/keeper-project.png" width={200} height={200} alt="Keeper App page"></Image>
               </a>
-              <p className={styles.description}> Lorem lorem or o fj  jfief f jdfdhrem lor o fj  jfief f lor o fj  jfief f jdfdhrem lor o fj  jfief f jdfdhfud df fud df dfd fdfsdfod h</p>
+              <p className={styles.description}>This app is based on Google Keep, a web app to save your notes. It is built using React and the database is Firebase. This was the final project from the bootcamp Full-Stack Developer 2022 by The AppBrewery, I have added new functionality (edit mode, database, etc) since then.</p>
             </div>
             <div className={styles.projectContainer}>
               <h2 className={styles.projectName}>Simon Game</h2>
               <a href="https://an2ans.github.io/Simon-Game/" >
                 <Image src="/simon-project.png" width={200} height={200} alt="Simon says game"></Image>
               </a>
-              <p className={styles.description}> Lorem lorem or o fj  jfief f jdfdhrem lor o fj  jfief f lor o fj  jfief f jdfdhrem lor o fj  jfief f jdfdhfud df fud df dfd fdfsdfod h</p>
+              {/* eslint-disable-next-line react/no-unescaped-entities */}
+              <p className={styles.description}> Have you ever played Simon, the classic game from the 80's? You have the opportunity now, just click on the image and follow the randomly generated patron. This game is built in HTML, CSS and vainilla JavaScript. </p>
             </div>
           </div>
         </div>
