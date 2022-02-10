@@ -1,56 +1,70 @@
-import Head from 'next/head';
-import Image from 'next/image';
-import Link from "next/link";
+import Head from "next/head";
 import Arrow from "../components/arrow";
-import styles from '../styles/projects.module.css';
-
+import styles from "../styles/projects.module.css";
+import Project from "../components/project";
+import { useState, useEffect } from "react";
 
 export default function Projects() {
+  const [projects, setProjects] = useState([]);
+
+  useEffect(() => {
+    const fetchProjects = async () => {
+      try {
+        const response = await (
+          await fetch("/api/fetchProjectsFromAirtable")
+        ).json();
+        setProjects(response);
+      } catch (e) {
+        console.log({
+          message: "there was an error while fetching projects",
+          e,
+        });
+      }
+    };
+    if (projects.length === 0) {
+      fetchProjects();
+    }
+  }, [projects]);
+
+  console.log({ projects });
+
   return (
     <div className={styles.container}>
       <Head>
-        <title>My Projects</title>    
+        <title>My Projects</title>
       </Head>
 
       <main className={styles.main}>
-
         <div className={styles.leftSide}>
-          <p>To About Me</p> 
+          <p>To About Me</p>
           <Arrow href="about" arrow="left" />
         </div>
 
         <div className={styles.mainDiv}>
-          <h2 className={styles.title}>Here you can visit the websites I have coded from scratch.<br></br><br></br> You can find the rest of my code in my <a href="https://github.com/An2ans">GitHub </a>account.</h2>
-          <div className={styles.projectsContainer} >
-            <div className={styles.projectContainer}>
-              <h2 className={styles.projectName}>Crown Clothing</h2>
-              <a href="https://crown-project.herokuapp.com/" >
-                <Image src="/crwn-project.png" width={200} height={200} alt="Crown Clothing e-commerce website"></Image>
-              </a>
-              <p className={styles.description}>Crown Clothing is an e-commerce website developed using React components. I am using Redux Sagas and hooks for state management, Stripe for payments system, and Firebase for auth and database. This was the final project from the course Complete React Developer 2022 by ZTM Academy. </p>
-            </div>
-            <div className={styles.projectContainer}>
-              <h2 className={styles.projectName}>Keeper App</h2>
-              <a href="https://an2ans.github.io/Keeper-app/" >
-                <Image src="/keeper-project.png" width={200} height={200} alt="Keeper App page"></Image>
-              </a>
-              <p className={styles.description}>This app is based on Google Keep, a web app to save your notes. It is built using React and the database is Firebase. This was the final project from the bootcamp Full-Stack Developer 2022 by The AppBrewery, I have added new functionality (edit mode, database, etc) since then.</p>
-            </div>
-            <div className={styles.projectContainer}>
-              <h2 className={styles.projectName}>Simon Game</h2>
-              <a href="https://an2ans.github.io/Simon-Game/" >
-                <Image src="/simon-project.png" width={200} height={200} alt="Simon says game"></Image>
-              </a>
-              {/* eslint-disable-next-line react/no-unescaped-entities */}
-              <p className={styles.description}> Have you ever played Simon, the classic game from the 80's? You have the opportunity now, just click on the image and follow the randomly generated patron. This game is built in HTML, CSS and vainilla JavaScript. </p>
-            </div>
+          <h2 className={styles.title}>
+            Here you can visit the websites I have coded so far.<br></br>
+            <br></br> You can find the rest of my code in my {""}
+            <a href="https://github.com/An2ans">GitHub </a>account.
+          </h2>
+          <div className={styles.projectsContainer}>
+            {projects.map((project) => {
+              const { name, href, description, imgSrc } = project;
+              return (
+                <Project
+                  key={name}
+                  name={name}
+                  href={href}
+                  imgSrc={imgSrc}
+                  description={description}
+                />
+              );
+            })}
           </div>
         </div>
         <div className={styles.rightSide}>
-          <p>To Home</p> 
+          <p>To Home</p>
           <Arrow href="/" arrow="right" />
         </div>
-    
       </main>
     </div>
   );
