@@ -1,6 +1,5 @@
 import Head from "next/head";
 import Image from "next/image";
-import Link from "next/link";
 import styles from "../styles/about.module.css";
 import Arrow from "../components/arrow";
 
@@ -11,9 +10,9 @@ export default function About() {
         <title>About me</title>
       </Head>
 
-      <main className={styles.main}>
+      <main className={styles.main + `` + ` slideLeft`}>
         <div className={styles.leftSide}>
-          <p>To Home </p>
+          <p>Back To Home </p>
           <Arrow arrow="left" href="/" />
         </div>
         <div className={styles.mainDiv}>
@@ -57,8 +56,8 @@ export default function About() {
           </div>
         </div>
         <div className={styles.rightSide}>
-          <p>To My Projects </p>
-          <Arrow arrow="right" href="projects" />
+          <p>My Skills </p>
+          <Arrow arrow="right" href="/skills" />
         </div>
       </main>
     </div>

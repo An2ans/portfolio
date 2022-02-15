@@ -3,6 +3,7 @@
   display: grid;
   grid-template-columns: 15% 70% 15%;
   grid-template-rows: 75% auto;
+  margin-top: 8vh;
 
   background: rgba(65, 117, 5, 0.3);
   box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);

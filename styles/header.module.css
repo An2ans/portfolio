@@ -1,63 +1,58 @@
-.headerContainer{
-height: 8vh;
-width: 100%;
-display: flex;
-flex-wrap: wrap;
-justify-content:space-between;
-background: black;
-opacity: 0.8;
-font-size: 1rem;
-font-weight: bold;
+.headerContainer {
+  height: 8vh;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  z-index: 1;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  background: black;
+  opacity: 0.95;
+  font-size: 1rem;
+  font-weight: bold;
 }
 
-.logoContainer{
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100%;
-    width: 70px;
-    
+.logoContainer {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 70px;
 }
 
-.optionsContainer{
-    width: 80%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
-    
-    
+.optionsContainer {
+  width: 80%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
 }
 
-.options{
-    display: flex;
-    margin: auto 40px;
-    cursor: pointer;
-
+.options {
+  display: flex;
+  margin: auto 40px;
+  cursor: pointer;
 }
 
-.options:hover{
-    border-bottom: 1px solid #fff;
+.options:hover {
+  border-bottom: 1px solid #fff;
 }
-
 
 @media (min-width: 640px) {
-    .logoContainer{
-    }
+  .logoContainer {
+  }
 
-    .options:hover{
-        border-bottom: 2px solid #fff;
-    }
-    
-
+  .options:hover {
+    border-bottom: 2px solid #fff;
+  }
 }
-@media (min-width: 1280px){
-    .optionsContainer{
-        width: 60%;
-        
-    }
-    .logoContainer{
-        margin-left: 40px;
-    }
+@media (min-width: 1280px) {
+  .optionsContainer {
+    width: 60%;
+  }
+  .logoContainer {
+    margin-left: 40px;
+  }
 }
