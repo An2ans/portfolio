@@ -9,7 +9,7 @@
   justify-content: space-between;
   background: black;
   opacity: 0.95;
-  font-size: 1rem;
+  font-size: 1.2rem;
   font-weight: bold;
 }
 
@@ -22,11 +22,25 @@
   width: 70px;
 }
 
+.expandBtn {
+  background-color: black;
+  color: white;
+  cursor: pointer;
+  margin-right: 30px;
+}
+
 .optionsContainer {
-  width: 80%;
-  height: 100%;
+  position: fixed;
+  height: 70%;
+  width: 50%;
+  top: 8vh;
+  left: 0;
+  z-index: 1;
+  background-color: black;
+
   display: flex;
   align-items: center;
+  flex-direction: column;
   justify-content: space-evenly;
 }
 
@@ -41,7 +55,21 @@
 }
 
 @media (min-width: 640px) {
-  .logoContainer {
+  .optionsContainer {
+    position: relative;
+    flex-direction: row;
+    top: 0;
+    font-size: 1rem;
+
+    width: 80%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+  }
+
+  .expandBtn {
+    display: none;
   }
 
   .options:hover {

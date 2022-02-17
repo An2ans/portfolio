@@ -5,13 +5,18 @@ import Arrow from "../components/arrow";
 
 export default function Contact() {
   return (
-    <div className={styles.container}>
+    <div className={styles.container + `` + ` slideDown`}>
       <Head>
         <title>Contact Me</title>
+        <meta
+          name="description"
+          content="Here you can send me any advise, suggestion, job offer, etc."
+        />
       </Head>
 
       <main className={styles.main}>
         <div className={styles.leftSide}>
+          <p>My Projects</p>
           <Arrow arrow="left" href="/projects" />
         </div>
         <div className={styles.mainDiv}>
@@ -59,6 +64,7 @@ export default function Contact() {
           </form>
         </div>
         <div className={styles.rightSide}>
+          <p>About Me</p>
           <Arrow arrow="right" href="/about" />
         </div>
       </main>

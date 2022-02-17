@@ -59,6 +59,7 @@
   display: flex;
   text-align: center;
   align-self: center;
+  cursor: pointer;
 }
 
 .name:hover {
@@ -129,6 +130,9 @@
 
 @media (min-width: 1280px) {
   .mainDiv {
-    margin: 80px 4rem;
+    margin: 40px 4rem;
+  }
+  .hi {
+    margin-top: 0;
   }
 }

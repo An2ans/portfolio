@@ -27,14 +27,14 @@ const Skills = () => {
   }, [skills]);
 
   return (
-    <div className={styles.container}>
+    <div className={styles.container + `` + ` slideLeft`}>
       <Head>
         <title>My Skills</title>
       </Head>
 
       <main className={styles.main}>
         <div className={styles.leftSide}>
-          <p>To About Me</p>
+          <p>About Me</p>
           <Arrow href="/about" arrow="left" />
         </div>
 
@@ -57,7 +57,7 @@ const Skills = () => {
           </div>
         </div>
         <div className={styles.rightSide}>
-          <p>To My Projects</p>
+          <p>My Projects</p>
           <Arrow href="/projects" arrow="right" />
         </div>
       </main>

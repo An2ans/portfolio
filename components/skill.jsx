@@ -6,7 +6,14 @@ const Skill = (props) => {
   const [hidden, setHidden] = useState(true);
 
   const handleClick = (e) => {
-    setHidden(!hidden);
+    if (!hidden) {
+      let desc = document.getElementById(`description${props.name}`);
+      desc.classList.remove("pullDown");
+      desc.classList.add("floating");
+      let timer1 = setTimeout(() => setHidden(!hidden), 1500);
+    } else {
+      setHidden(!hidden);
+    }
   };
   return (
     <div className={styles.container + " " + "slideLeft"}>
@@ -15,7 +22,10 @@ const Skill = (props) => {
         <h2 className={styles.name}>{props.name}</h2>
       </div>
       {!hidden && (
-        <p className={styles.description + " " + "pullDown"}>
+        <p
+          className={styles.description + " " + "pullDown"}
+          id={`description${props.name}`}
+        >
           {props.description}
         </p>
       )}

@@ -25,10 +25,6 @@ class MyDocument extends Document {
             crossOrigin="anonymous"
           ></link>
 
-          {/* Animations
-
-          <link rel="stylesheet" href="/styles/animations.css"></link> */}
-
           {/* FontAwesome */}
 
           <link

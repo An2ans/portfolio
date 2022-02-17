@@ -49,9 +49,9 @@ export default function About() {
               bussiness, I was getting more and more interested in developing my
               websites from scratch, so I did the amazing 2021 Full-Stack
               Developer Bootcamp by the{" "}
-              <a src="https://www.appbrewery.co/">App Brewery.</a> This bootcamp
-              really opened my eyes to the wonders of programming, and I have
-              not stopped learning since then.{" "}
+              <a href="https://www.appbrewery.co/">App Brewery.</a> This
+              bootcamp really opened my eyes to the wonders of programming, and
+              I have not stopped learning since then.{" "}
             </p>
           </div>
         </div>
