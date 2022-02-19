@@ -1,63 +1,88 @@
-.headerContainer{
-height: 8vh;
-width: 100%;
-display: flex;
-flex-wrap: wrap;
-justify-content:space-between;
-background: black;
-opacity: 0.8;
-font-size: 1rem;
-font-weight: bold;
+.headerContainer {
+  height: 8vh;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  z-index: 1;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  background: black;
+  opacity: 0.95;
+  font-size: 1.2rem;
+  font-weight: bold;
 }
 
-.logoContainer{
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100%;
-    width: 70px;
-    
+.logoContainer {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 70px;
 }
 
-.optionsContainer{
+.expandBtn {
+  background-color: black;
+  color: white;
+  cursor: pointer;
+  margin-right: 30px;
+}
+
+.optionsContainer {
+  position: fixed;
+  height: 70%;
+  width: 50%;
+  top: 8vh;
+  left: 0;
+  z-index: 1;
+  background-color: black;
+
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.options {
+  display: flex;
+  margin: auto 40px;
+  cursor: pointer;
+  border-bottom: 2px solid #fff;
+}
+
+.options:hover {
+  color: rgb(9, 122, 34);
+  transition: color 0.5s linear;
+}
+
+@media (min-width: 640px) {
+  .optionsContainer {
+    position: relative;
+    flex-direction: row;
+    top: 0;
+    font-size: 1rem;
+
     width: 80%;
     height: 100%;
     display: flex;
     align-items: center;
     justify-content: space-evenly;
-    
-    
+  }
+
+  .expandBtn {
+    display: none;
+  }
+  .options {
+    border-bottom: none;
+  }
 }
-
-.options{
-    display: flex;
-    margin: auto 40px;
-    cursor: pointer;
-
-}
-
-.options:hover{
-    border-bottom: 1px solid #fff;
-}
-
-
-@media (min-width: 640px) {
-    .logoContainer{
-    }
-
-    .options:hover{
-        border-bottom: 2px solid #fff;
-    }
-    
-
-}
-@media (min-width: 1280px){
-    .optionsContainer{
-        width: 60%;
-        
-    }
-    .logoContainer{
-        margin-left: 40px;
-    }
+@media (min-width: 1280px) {
+  .optionsContainer {
+    font-size: 1.2rem;
+    width: 60%;
+  }
+  .logoContainer {
+    margin-left: 40px;
+  }
 }

@@ -26,18 +26,20 @@ export default function Projects() {
     }
   }, [projects]);
 
-  console.log({ projects });
-
   return (
-    <div className={styles.container}>
+    <div className={styles.container + `` + ` slideRight`}>
       <Head>
         <title>My Projects</title>
+        <meta
+          name="description"
+          content="Here you can find the main websites, apps and games I have coded so far."
+        />
       </Head>
 
       <main className={styles.main}>
         <div className={styles.leftSide}>
-          <p>To About Me</p>
-          <Arrow href="about" arrow="left" />
+          <p>My Skills</p>
+          <Arrow href="/skills" arrow="left" />
         </div>
 
         <div className={styles.mainDiv}>
@@ -62,7 +64,7 @@ export default function Projects() {
           </div>
         </div>
         <div className={styles.rightSide}>
-          <p>To Home</p>
+          <p>Back To Home</p>
           <Arrow href="/" arrow="right" />
         </div>
       </main>

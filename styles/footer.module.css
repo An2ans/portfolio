@@ -1,47 +1,47 @@
-.footerContainer{
-    height: 8vh;
-    width: 100%;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content:space-between;
-    align-items: center;
-    background: black;
-    opacity: 0.7;
-    font-size: 0.8rem;
-    color: #fff;
-
+.footerContainer {
+  height: 8vh;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  background: black;
+  opacity: 0.7;
+  font-size: 0.8rem;
+  color: #fff;
 }
 
-.iconsContainer{
-    width: 40%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
-    font-size: 1.5rem;
-    color: #fff;
-
+.iconsContainer {
+  font-weight: bold;
+  width: 40%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  font-size: 1.5rem;
+  color: #fff;
 }
 
-.link:hover{
-    font-weight: bold;
-    color: rgb(9, 122, 34);
-    text-decoration: underline;
+.link:hover {
+  transition: color 0.5s ease-in;
+
+  color: rgb(9, 122, 34);
+  text-decoration: underline;
 }
 
 @media (min-width: 640px) {
-    .footerContainer{
-        font-size: 1rem;
-        padding: 0 30px;
-    }
+  .footerContainer {
+    font-size: 1rem;
+    padding: 0 30px;
+  }
 }
 
-@media (min-width: 1280px){
-    .footerContainer{
-        padding: 0 5%;
-    }
-    .iconsContainer{
-        width: 25%;
-    }
-
+@media (min-width: 1280px) {
+  .footerContainer {
+    padding: 0 5%;
+  }
+  .iconsContainer {
+    font-size: 2rem;
+    width: 25%;
+  }
 }

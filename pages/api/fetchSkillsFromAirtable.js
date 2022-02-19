@@ -1,18 +1,18 @@
-import { projectsTable } from "../../airtable/airtable";
+import { skillsTable } from "../../airtable/airtable";
 
-const fetchProjectsFromAirtable = async (req, res) => {
+const fetchSkillsFromAirtable = async (req, res) => {
   if ((req.method = "GET")) {
     try {
-      let projects = [];
-      const response = await projectsTable
+      let skills = [];
+      const response = await skillsTable
         .select()
         .eachPage((records, fetchNextPage) => {
           records.forEach((record) => {
-            projects.push(record.fields);
+            skills.push(record.fields);
           });
           fetchNextPage();
         });
-      res.json(projects);
+      res.json(skills);
       res.status(200);
     } catch (e) {
       res.status(500);
@@ -21,4 +21,4 @@ const fetchProjectsFromAirtable = async (req, res) => {
   }
 };
 
-export default fetchProjectsFromAirtable;
+export default fetchSkillsFromAirtable;

@@ -3,6 +3,6 @@ const base = new Airtable({ apiKey: process.env.AIRTABLE_API_KEY }).base(
   process.env.AIRTABLE_BASE_KEY
 );
 
-const table = base("projects");
+export const projectsTable = base("projects");
 
-export default table;
+export const skillsTable = base("skills");

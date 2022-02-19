@@ -1,0 +1,59 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 auto;
+}
+
+.name {
+  text-align: center;
+}
+
+.description {
+  text-align: justify;
+  font-size: 1rem;
+  margin: 10px 20px;
+}
+
+.hidden {
+  display: hidden;
+}
+
+.imageContainer {
+  cursor: pointer;
+  padding: 20px;
+  background-color: #fff;
+  opacity: 0.9;
+  color: black;
+  margin: 15px;
+}
+
+@media (min-width: 640px) {
+  .imageContainer {
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    background: none;
+    opacity: 1;
+    border-radius: 10px;
+    font-size: 1.2rem;
+    transition: background-color 1s linear;
+    color: #fff;
+  }
+  .imageContainer h2 {
+    margin-top: 10px;
+    transition: color 0.5s ease-in;
+  }
+  .imageContainer:hover {
+    background-color: #fff;
+    opacity: 0.8;
+    color: black;
+    text-decoration: double;
+  }
+
+  .description {
+    font-size: 1.2rem;
+    margin: 10px auto;
+  }
+}
