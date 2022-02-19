@@ -26,8 +26,6 @@ export default function Projects() {
     }
   }, [projects]);
 
-  console.log({ projects });
-
   return (
     <div className={styles.container + `` + ` slideRight`}>
       <Head>

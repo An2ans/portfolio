@@ -36,9 +36,9 @@
 }
 
 .textContainer h2 {
-  font-size: 1rem;
+  font-size: 1.5rem;
   display: flex;
-  margin: 1rem auto;
+  margin: 2rem auto;
   justify-content: center;
   width: 80%;
 }

@@ -7,7 +7,7 @@ import Link from "next/link";
 
 export default function Home() {
   return (
-    <div className={styles.container}>
+    <div className={styles.container+ " " + "fadeIn"}>
       <Head>
         <title>Antonio Beltran Site</title>
         <meta name="description" content="This is my new personal site. Here you can know more about me and visit the other websites I have coded too." />

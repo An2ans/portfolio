@@ -48,10 +48,12 @@
   display: flex;
   margin: auto 40px;
   cursor: pointer;
+  border-bottom: 2px solid #fff;
 }
 
 .options:hover {
-  border-bottom: 1px solid #fff;
+  color: rgb(9, 122, 34);
+  transition: color 0.5s linear;
 }
 
 @media (min-width: 640px) {
@@ -71,13 +73,13 @@
   .expandBtn {
     display: none;
   }
-
-  .options:hover {
-    border-bottom: 2px solid #fff;
+  .options {
+    border-bottom: none;
   }
 }
 @media (min-width: 1280px) {
   .optionsContainer {
+    font-size: 1.2rem;
     width: 60%;
   }
   .logoContainer {

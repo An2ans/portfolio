@@ -40,7 +40,12 @@ const Skills = () => {
 
         <div className={styles.mainDiv}>
           <h1 className={styles.title}>
-            These are the main skills I have acquired so far:
+            These are the main skills I have trained so far.
+            <br />
+            <br /> For a full list, please download{" "}
+            <a href="/Antonio Beltran CV-web.pdf" download>
+              My CV
+            </a>
           </h1>
           <div className={styles.skillsContainer}>
             {skills.map((skill) => {
