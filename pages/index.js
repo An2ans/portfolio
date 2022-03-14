@@ -21,7 +21,7 @@ export default function Home() {
       <main className={styles.main}>
         <div className={styles.leftSide}>
           <p>To My Projects</p>
-          <Arrow href="/projects" arrow="left" />
+          <Arrow href="/my-projects" arrow="left" />
         </div>
         <div className={styles.mainDiv}>
           <div className={styles.hi}>
