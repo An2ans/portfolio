@@ -16,8 +16,7 @@ export default function About() {
 
       <main className={styles.main + `` + ` slideLeft`}>
         <div className={styles.leftSide}>
-          <p>Back To Home </p>
-          <Arrow arrow="left" href="/" />
+          <Arrow arrow="left" href="/" direction="Home" />
         </div>
         <div className={styles.mainDiv}>
           <div className={styles.imageContainer}>
@@ -65,8 +64,7 @@ export default function About() {
           </div>
         </div>
         <div className={styles.rightSide}>
-          <p>My Skills </p>
-          <Arrow arrow="right" href="/skills" />
+          <Arrow arrow="right" href="/skills" direction="My Skills" />
         </div>
       </main>
     </div>

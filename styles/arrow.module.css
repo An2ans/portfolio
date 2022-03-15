@@ -1,20 +1,27 @@
-.arrowContainer{
-    display:flex;
-    justify-content: center;
-    align-items:center;
+.arrowContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
-.arrowContainer i{
-    font-size: 3.5rem;
-    cursor: pointer;
-    
+.arrowContainer i {
+  font-size: 3.5rem;
+  cursor: pointer;
 }
 
 @media (min-width: 640px) {
+  .arrowContainer {
+    padding: 0 2rem 2rem 2rem;
+  }
+  .arrowContainer i:hover {
+    transform: scale(1.4);
+    transition: transform 6s cubic-bezier(0.25, 0.45, 0.45, 0.95);
+  }
 
-    .arrowContainer:hover{
-        transform: scale(1.4);
-        transition: transform 6s cubic-bezier(0.25, 0.45, 0.45, 0.95);
-
-    }
+  .arrowContainer p {
+    opacity: 0;
+    cursor: default;
+    transition: opacity 4s ease-out;
+  }
 }

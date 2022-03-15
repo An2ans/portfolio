@@ -20,8 +20,7 @@ export default function Home() {
 
       <main className={styles.main}>
         <div className={styles.leftSide}>
-          <p>To My Projects</p>
-          <Arrow href="/my-projects" arrow="left" />
+          <Arrow href="/my-projects" arrow="left" direction="My Projects" />
         </div>
         <div className={styles.mainDiv}>
           <div className={styles.hi}>
@@ -38,15 +37,13 @@ export default function Home() {
           <p>A Web Developer</p>
         </div>
         <div className={styles.rightSide}>
-          <p>To About Me</p>
-          <Arrow href="/about" arrow="right" />
+          <Arrow href="/about" arrow="right" direction="About Me" />
         </div>
         <div></div>
         <div>
           <p className={styles.instructions}>Please, select the page that you would like to visit on the header, or click on the arrows to know more about me.</p>
           <div className={styles.bottomSide}>
-            <p>To Contact Me</p>
-            <Arrow arrow="down" href="/contact" />
+            <Arrow arrow="down" href="/contact" direction="Contact Me" />
           </div>
         </div>
         <div></div>

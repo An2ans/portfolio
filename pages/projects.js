@@ -38,8 +38,7 @@ export default function Projects() {
 
       <main className={styles.main}>
         <div className={styles.leftSide}>
-          <p>My Skills</p>
-          <Arrow href="/skills" arrow="left" />
+          <Arrow href="/skills" arrow="left" direction="My Skills" />
         </div>
 
         <div className={styles.mainDiv}>
@@ -64,8 +63,8 @@ export default function Projects() {
           </div>
         </div>
         <div className={styles.rightSide}>
-          <p>Back To Home</p>
-          <Arrow href="/" arrow="right" />
+          <p></p>
+          <Arrow href="/" arrow="right" direction="Home" />
         </div>
       </main>
     </div>

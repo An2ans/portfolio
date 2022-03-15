@@ -16,8 +16,7 @@ export default function Contact() {
 
       <main className={styles.main}>
         <div className={styles.leftSide}>
-          <p>My Projects</p>
-          <Arrow arrow="left" href="/projects" />
+          <Arrow arrow="left" href="/my-projects" direction="My Projects" />
         </div>
         <div className={styles.mainDiv}>
           <div className={styles.textContainer}>
@@ -64,8 +63,7 @@ export default function Contact() {
           </form>
         </div>
         <div className={styles.rightSide}>
-          <p>About Me</p>
-          <Arrow arrow="right" href="/about" />
+          <Arrow arrow="right" href="/about" direction="About Me" />
         </div>
       </main>
     </div>
