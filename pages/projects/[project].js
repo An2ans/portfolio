@@ -40,7 +40,10 @@ const ProjectPage = ({ project }) => {
   return (
     <div className={styles.main}>
       <h1 className={styles.title}>{project.name} </h1>
-      <div className={styles.imgContainer}>
+      <Link href="/projects" passHref>
+        <div className={styles.backButtom + " slideLeft"}>← Back </div>
+      </Link>
+      <div className={styles.imgContainer + " fadeIn"}>
         <Link href={project.href} passHref>
           <Image
             src={project.imgSrc}
@@ -51,23 +54,21 @@ const ProjectPage = ({ project }) => {
         </Link>
       </div>
       <div className={styles.textContainer}>
-        <p className={styles.description}>{project.description}</p>
-        <p className={styles.stack}>
+        <p className={styles.description + " pullDown"}>
+          {project.description}
+        </p>
+        <p className={styles.stack + " slideDown"}>
           Stack I have used in this project:
           <br />{" "}
           {stack.map((tech) => {
-            return ` #${tech}, `;
+            return ` ${tech}, `;
           })}
         </p>
-        <p className={styles.links}>
+        <p className={styles.links + " slideDown"}>
           Links:
           <a href={project.href}>Website</a>
           <a href={project.ghLink}>GitHub repository</a>
-          {project.altLink ? (
-            <a href={project.altLink}>{project.altDes}</a>
-          ) : (
-            {}
-          )}
+          {project.altLink && <a href={project.altLink}>{project.altDes}</a>}
         </p>
       </div>
     </div>
