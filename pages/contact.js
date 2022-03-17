@@ -5,7 +5,7 @@ import Arrow from "../components/arrow";
 
 export default function Contact() {
   return (
-    <div className={styles.container + `` + ` slideDown`}>
+    <div className={styles.container}>
       <Head>
         <title>Contact Me</title>
         <meta
@@ -15,15 +15,15 @@ export default function Contact() {
       </Head>
 
       <main className={styles.main}>
-        <div className={styles.leftSide}>
-          <Arrow arrow="left" href="/my-projects" direction="My Projects" />
+        <div className={styles.leftSide + `` + ` slideLeft`}>
+          <Arrow arrow="left" href="/projects" direction="My Projects" />
         </div>
         <div className={styles.mainDiv}>
           <div className={styles.textContainer}>
             <h2>You can contact me via email using the form below.</h2>
           </div>
           <form
-            className={styles.contactForm}
+            className={styles.contactForm + `` + ` slideDown`}
             action="https://formsubmit.co/322a7123cad28ab28c2d13e69a655775"
             method="POST"
           >
@@ -62,7 +62,7 @@ export default function Contact() {
             </button>
           </form>
         </div>
-        <div className={styles.rightSide}>
+        <div className={styles.rightSide + `` + ` slideRight`}>
           <Arrow arrow="right" href="/about" direction="About Me" />
         </div>
       </main>

@@ -27,7 +27,7 @@ export default function Projects() {
   }, [projects]);
 
   return (
-    <div className={styles.container + `` + ` slideRight`}>
+    <div className={styles.container}>
       <Head>
         <title>My Projects</title>
         <meta
@@ -37,7 +37,7 @@ export default function Projects() {
       </Head>
 
       <main className={styles.main}>
-        <div className={styles.leftSide}>
+        <div className={styles.leftSide + `` + ` slideLeft`}>
           <Arrow href="/skills" arrow="left" direction="My Skills" />
         </div>
 
@@ -62,8 +62,7 @@ export default function Projects() {
             })}
           </div>
         </div>
-        <div className={styles.rightSide}>
-          <p></p>
+        <div className={styles.rightSide + `` + ` slideRight`}>
           <Arrow href="/" arrow="right" direction="Home" />
         </div>
       </main>

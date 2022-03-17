@@ -46,10 +46,12 @@
 
 .hi {
   display: flex;
+  flex-direction: column;
   text-align: center;
   align-self: center;
   margin-top: 20px;
   padding: 20px 0;
+  gap: 2rem;
 }
 
 .name {

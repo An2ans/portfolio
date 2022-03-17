@@ -39,7 +39,7 @@ const ProjectPage = ({ project }) => {
   const stack = project.stack.split(",");
   return (
     <div className={styles.main}>
-      <h1 className={styles.title}>{project.name} Project </h1>
+      <h1 className={styles.title}>{project.name} </h1>
       <div className={styles.imgContainer}>
         <Link href={project.href} passHref>
           <Image
@@ -62,7 +62,12 @@ const ProjectPage = ({ project }) => {
         <p className={styles.links}>
           Links:
           <a href={project.href}>Website</a>
-          <a href={project.href}>GitHub repository</a>
+          <a href={project.ghLink}>GitHub repository</a>
+          {project.altLink ? (
+            <a href={project.altLink}>{project.altDes}</a>
+          ) : (
+            {}
+          )}
         </p>
       </div>
     </div>
