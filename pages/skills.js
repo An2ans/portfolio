@@ -61,7 +61,7 @@ const Skills = () => {
           </div>
         </div>
         <div className={styles.rightSide + `` + ` slideRight`}>
-          <Arrow href="/my-projects" arrow="right" direction="My Projects" />
+          <Arrow href="/projects" arrow="right" direction="My Projects" />
         </div>
       </main>
     </div>
