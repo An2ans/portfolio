@@ -37,7 +37,7 @@ export default function Home() {
         <title>Antonio Beltran Site</title>
         <meta name="description" content="This is my new personal site. Here you can know more about me and visit the other websites I have coded too." />
         <link rel="icon" href="/favicon.ico" />
-        <meta charset="UTF-8" />
+        <meta charSet="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta httpEquiv="X-UA-Compatible" content="ie=edge" />
       </Head>
