@@ -55,6 +55,14 @@
   justify-content: space-around;
 }
 
+.links * {
+  transition: color 1s linear;
+}
+
+.links *:hover {
+  color: rgba(9, 122, 34, 1);
+}
+
 @media (min-width: 640px) {
   .title {
     margin: 3rem auto;
