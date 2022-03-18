@@ -2,6 +2,7 @@ import styles from "../../styles/projectpage.module.css";
 import Image from "next/image";
 import Link from "next/link";
 import { projectsTable } from "../../airtable/airtable";
+import { useEffect, useState } from "react";
 
 //In order to get dynamic paths, we need getStaticPaths, which return an array with all paths static generated (paths) and a bool fallback
 //To get the paths, I have fetched all projects and mapped using same params as [project], Ive pass it to lowercase (to make it not case sens) and toString to transform spaces
@@ -67,6 +68,24 @@ export const getStaticProps = async (context) => {
 
 //The page component receives the props from getStaticProps
 const ProjectPage = ({ project }) => {
+  const [projects, setProjects] = useState([]);
+
+  useEffect(() => {
+    const fetchProjects = async (req, res) => {
+      try {
+        const response = await fetchProjectsFromAirtable();
+        setProjects(response);
+      } catch (e) {
+        console.log({
+          message: "there was an error while fetching projects",
+          e,
+        });
+      }
+    };
+    if (projects.length === 0) {
+      fetchProjects();
+    }
+  });
   const stack = project.stack.split(",");
   return (
     <div className={styles.main}>
