@@ -27,22 +27,21 @@ const Skills = () => {
   }, [skills]);
 
   return (
-    <div className={styles.container + `` + ` slideLeft`}>
+    <div className={styles.container}>
       <Head>
         <title>My Skills</title>
       </Head>
 
       <main className={styles.main}>
-        <div className={styles.leftSide}>
-          <p>About Me</p>
-          <Arrow href="/about" arrow="left" />
+        <div className={styles.leftSide + `` + ` slideLeft`}>
+          <Arrow href="/about" arrow="left" direction="About Me" />
         </div>
 
         <div className={styles.mainDiv}>
           <h1 className={styles.title}>
-            These are the main skills I have trained so far.
+            This is the Tech Stack I use more frequently.
             <br />
-            <br /> For a full list, please download{" "}
+            <br /> For a full list of my skills, please download{" "}
             <a href="/Antonio Beltran CV-web.pdf" download>
               My CV
             </a>
@@ -61,9 +60,8 @@ const Skills = () => {
             })}
           </div>
         </div>
-        <div className={styles.rightSide}>
-          <p>My Projects</p>
-          <Arrow href="/projects" arrow="right" />
+        <div className={styles.rightSide + `` + ` slideRight`}>
+          <Arrow href="/projects" arrow="right" direction="My Projects" />
         </div>
       </main>
     </div>

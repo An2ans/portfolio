@@ -2,6 +2,7 @@ import Head from "next/head";
 import Image from "next/image";
 import styles from "../styles/about.module.css";
 import Arrow from "../components/arrow";
+import { useState, useEffect } from "react";
 
 export default function About() {
   return (
@@ -14,13 +15,12 @@ export default function About() {
         />
       </Head>
 
-      <main className={styles.main + `` + ` slideLeft`}>
-        <div className={styles.leftSide}>
-          <p>Back To Home </p>
-          <Arrow arrow="left" href="/" />
+      <main className={styles.main}>
+        <div className={styles.leftSide + ` slideLeft`}>
+          <Arrow arrow="left" href="/" direction="Home" />
         </div>
         <div className={styles.mainDiv}>
-          <div className={styles.imageContainer}>
+          <div className={styles.imageContainer + " stretchRight"}>
             <Image
               src="/me.jpeg"
               width={250}
@@ -29,7 +29,7 @@ export default function About() {
               className={styles.profile}
             ></Image>
           </div>
-          <div className={styles.text1}>
+          <div className={styles.text1 + " stretchLeft"}>
             <p>
               Let me introduce myself: <br></br>
               <br></br>My name is Antonio Beltrán, I am a Spanish self-taught
@@ -40,7 +40,7 @@ export default function About() {
               discover my new passion: programming.
             </p>
           </div>
-          <div className={styles.imageContainer}>
+          <div className={styles.imageContainer + " stretchRight"}>
             <Image
               src="/me2.jpg"
               width={250}
@@ -48,7 +48,7 @@ export default function About() {
               alt="This is me taking a coffee next to the Arndale (Manchester)"
             ></Image>
           </div>
-          <div className={styles.text2}>
+          <div className={styles.text2 + " stretchLeft"}>
             <p>
               After completing several courses on Web Design and SEO, I was
               getting more and more interested in developing a whole website
@@ -64,9 +64,8 @@ export default function About() {
             </p>
           </div>
         </div>
-        <div className={styles.rightSide}>
-          <p>My Skills </p>
-          <Arrow arrow="right" href="/skills" />
+        <div className={styles.rightSide + ` slideRight`}>
+          <Arrow arrow="right" href="/skills" direction="My Skills" />
         </div>
       </main>
     </div>
