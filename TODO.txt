@@ -1,0 +1,4 @@
+- ensure way to fetch projects on projects page like in skills
+- ensure way to fetch the data on dynamic page too
+- check all apis still work correctly
+- New uses for apis
