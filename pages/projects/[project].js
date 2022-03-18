@@ -3,14 +3,15 @@ import Image from "next/image";
 import Link from "next/link";
 import {
   projectsTable,
-  fetchProjectsFromAirtable,
+  fetchProjectsFromAirtableAPI,
+  fetchProjects,
 } from "../../airtable/airtable";
 import { useEffect, useState } from "react";
 
 //In order to get dynamic paths, we need getStaticPaths, which return an array with all paths static generated (paths) and a bool fallback
 //To get the paths, I have fetched all projects and mapped using same params as [project], Ive pass it to lowercase (to make it not case sens) and toString to transform spaces
 export const getStaticPaths = async () => {
-  const projects = await fetchProjectsFromAirtable();
+  const projects = await fetchProjects();
   const paths = await projects.map((project) => {
     return {
       params: { project: project.name.toLowerCase().toString() },
@@ -25,23 +26,6 @@ export const getStaticPaths = async () => {
 //We need StaticProps too to get dynamic routes, it takes context as argument and return the specific project we are in
 //To do so, I have fetched projects again and used find() to return the one with the same name
 export const getStaticProps = async (context) => {
-  const fetchProjects = async () => {
-    try {
-      let projects = [];
-      await projectsTable.select().eachPage((records, fetchNextPage) => {
-        records.forEach((record) => {
-          projects.push(record.fields);
-        });
-        fetchNextPage();
-      });
-      return projects;
-    } catch (e) {
-      return console.log({
-        message: "there was an error retrieving the records for props",
-        e,
-      });
-    }
-  };
   const projectName = context.params.project;
   const projects = await fetchProjects();
   const project = await projects.find(
