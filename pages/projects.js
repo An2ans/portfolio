@@ -7,7 +7,7 @@ import { fetchRecords } from "../airtable/airtable";
 import { data } from "../utils/data";
 
 export default function Projects() {
-  const [projects, setProjects] = useState([]);
+  const [projects, setProjects] = useState(data);
 
   useEffect(() => {
     const fetchProjects = async () => {

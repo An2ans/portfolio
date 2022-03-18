@@ -16,24 +16,10 @@ export const projectsTable = base("projects");
 
 export const skillsTable = base("skills");
 
-// export const fetchProjectsFromAirtable = async () => {
-//   const projects = await (
-//     await fetch(server + "/api/fetchProjectsFromAirtable")
-//   ).json();
-//   return projects;
-// };
-
-// export const fetchSkillsFromAirtable = async () => {
-//   const skills = await (
-//     await fetch(server + "/api/fetchSkillsFromAirtable")
-//   ).json();
-//   return skills;
-// };
-
 export const fetchRecords = async (table) => {
   try {
     let response = [];
-    await base(`${table}`)
+    await base(table)
       .select()
       .eachPage((records, fetchNextPage) => {
         records.forEach((record) => {
