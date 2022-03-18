@@ -3,6 +3,7 @@ import Arrow from "../components/arrow";
 import styles from "../styles/projects.module.css";
 import Project from "../components/project";
 import { useState, useEffect } from "react";
+import { server } from "../airtable/airtable";
 
 export default function Projects() {
   const [projects, setProjects] = useState([]);
@@ -11,7 +12,7 @@ export default function Projects() {
     const fetchProjects = async () => {
       try {
         const response = await (
-          await fetch("/api/fetchProjectsFromAirtable")
+          await fetch(server + "/api/fetchProjectsFromAirtable")
         ).json();
         setProjects(response);
       } catch (e) {
