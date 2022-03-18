@@ -24,7 +24,7 @@ export const getStaticPaths = async () => {
     }
   };
   const projects = await fetchProjects();
-  const paths = projects.map((project) => {
+  const paths = await projects.map((project) => {
     return {
       params: { project: project.name.toLowerCase().toString() },
     };
@@ -57,7 +57,7 @@ export const getStaticProps = async (context) => {
   };
   const projectName = context.params.project;
   const projects = await fetchProjects();
-  const project = projects.find(
+  const project = await projects.find(
     (project) => project.name.toLowerCase().toString() == projectName
   );
   return {
