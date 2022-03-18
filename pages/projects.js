@@ -3,15 +3,16 @@ import Arrow from "../components/arrow";
 import styles from "../styles/projects.module.css";
 import Project from "../components/project";
 import { useState, useEffect } from "react";
-import { fetchProjectsFromAirtable } from "../airtable/airtable";
+import { fetchRecords } from "../airtable/airtable";
+import { data } from "../utils/data";
 
 export default function Projects() {
   const [projects, setProjects] = useState([]);
 
   useEffect(() => {
-    const fetchProjects = async (req, res) => {
+    const fetchProjects = async () => {
       try {
-        const response = await fetchProjectsFromAirtable();
+        const response = await fetchRecords("projects");
         setProjects(response);
       } catch (e) {
         console.log({
