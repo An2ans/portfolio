@@ -6,21 +6,24 @@ import { projectsTable } from "../../airtable/airtable";
 //In order to get dynamic paths, we need getStaticPaths, which return an array with all paths static generated (paths) and a bool fallback
 //To get the paths, I have fetched all projects and mapped using same params as [project], Ive pass it to lowercase (to make it not case sens) and toString to transform spaces
 export const getStaticPaths = async () => {
-  try {
-    let projects = [];
-    await projectsTable.select().eachPage((records, fetchNextPage) => {
-      records.forEach((record) => {
-        projects.push(record.fields);
+  const fetchProjects = async () => {
+    try {
+      let projects = [];
+      await projectsTable.select().eachPage((records, fetchNextPage) => {
+        records.forEach((record) => {
+          projects.push(record.fields);
+        });
+        fetchNextPage();
       });
-      fetchNextPage();
-    });
-    console.log({ projects });
-  } catch (e) {
-    return console.log({
-      message: "there was an error retrieving the records for paths",
-      e,
-    });
-  }
+      return projects;
+    } catch (e) {
+      return console.log({
+        message: "there was an error retrieving the records for paths",
+        e,
+      });
+    }
+  };
+  const projects = await fetchProjects();
   const paths = projects.map((project) => {
     return {
       params: { project: project.name.toLowerCase().toString() },
@@ -44,7 +47,6 @@ export const getStaticProps = async (context) => {
         });
         fetchNextPage();
       });
-      console.log({ projects });
       return projects;
     } catch (e) {
       return console.log({
