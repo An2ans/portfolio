@@ -19,3 +19,10 @@ export const fetchProjectsFromAirtable = async () => {
   ).json();
   return projects;
 };
+
+export const fetchSkillsFromAirtable = async () => {
+  const skills = await (
+    await fetch(server + "/api/fetchSkillsFromAirtable")
+  ).json();
+  return skills;
+};

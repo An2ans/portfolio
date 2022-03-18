@@ -3,7 +3,7 @@ import Arrow from "../components/arrow";
 import styles from "../styles/projects.module.css";
 import Project from "../components/project";
 import { useState, useEffect } from "react";
-import { server } from "../airtable/airtable";
+import { fetchProjectsFromAirtable } from "../airtable/airtable";
 
 export default function Projects() {
   const [projects, setProjects] = useState([]);
