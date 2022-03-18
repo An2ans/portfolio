@@ -1,0 +1,4 @@
+- Ensure a way to fetch projects from airtable instead of hardcoded in projects/
+- Fetch projects in dynamic projects page too
+- Other use for API
+-Improve all styling 
