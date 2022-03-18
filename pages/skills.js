@@ -3,6 +3,7 @@ import Head from "next/head";
 import Arrow from "../components/arrow";
 import Skill from "../components/skill";
 import { useState, useEffect } from "react";
+import { fetchSkillsFromAirtable } from "../airtable/airtable";
 
 const Skills = () => {
   const [skills, setSkills] = useState([]);
@@ -10,9 +11,7 @@ const Skills = () => {
   useEffect(() => {
     const fetchSkills = async () => {
       try {
-        const response = await (
-          await fetch("/api/fetchSkillsFromAirtable")
-        ).json();
+        const response = await fetchSkillsFromAirtable();
         setSkills(response);
       } catch (e) {
         console.log({

@@ -19,3 +19,49 @@ export const fetchProjectsFromAirtable = async () => {
   ).json();
   return projects;
 };
+
+export const fetchSkillsFromAirtable = async () => {
+  const skills = await (
+    await fetch(server + "/api/fetchSkillsFromAirtable")
+  ).json();
+  return skills;
+};
+
+export const fetchProjectsFromAirtableAPI = async (req, res) => {
+  if ((req.method = "GET")) {
+    try {
+      let projects = [];
+      const response = await projectsTable
+        .select()
+        .eachPage((records, fetchNextPage) => {
+          records.forEach((record) => {
+            projects.push(record.fields);
+          });
+          fetchNextPage();
+        });
+      res.json(projects);
+      res.status(200);
+    } catch (e) {
+      res.status(500);
+      res.json({ message: "there was an error retrieving the records", e });
+    }
+  }
+};
+
+export const fetchProjects = async () => {
+  try {
+    let projects = [];
+    await projectsTable.select().eachPage((records, fetchNextPage) => {
+      records.forEach((record) => {
+        projects.push(record.fields);
+      });
+      fetchNextPage();
+    });
+    return projects;
+  } catch (e) {
+    return console.log({
+      message: "there was an error retrieving the records for paths",
+      e,
+    });
+  }
+};
