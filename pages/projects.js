@@ -11,9 +11,7 @@ export default function Projects() {
   useEffect(() => {
     const fetchProjects = async () => {
       try {
-        const response = await (
-          await fetch(server + "/api/fetchProjectsFromAirtable")
-        ).json();
+        const response = await fetchProjectsFromAirtable();
         setProjects(response);
       } catch (e) {
         console.log({
