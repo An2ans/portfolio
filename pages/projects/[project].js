@@ -1,13 +1,12 @@
 import styles from "../../styles/projectpage.module.css";
 import Image from "next/image";
 import Link from "next/link";
+import { fetchProjectsFromAirtable } from "../../airtable/airtable";
 
 //In order to get dynamic paths, we need getStaticPaths, which return an array with all paths static generated (paths) and a bool fallback
 //To get the paths, I have fetched all projects and mapped using same params as [project], Ive pass it to lowercase (to make it not case sens) and toString to transform spaces
 export const getStaticPaths = async () => {
-  const projects = await (
-    await fetch("http://localhost:3000/api/fetchProjectsFromAirtable")
-  ).json();
+  const projects = await fetchProjectsFromAirtable();
   const paths = projects.map((project) => {
     return {
       params: { project: project.name.toLowerCase().toString() },
@@ -23,9 +22,7 @@ export const getStaticPaths = async () => {
 //To do so, I have fetched projects again and used find() to return the one with the same name
 export const getStaticProps = async (context) => {
   const projectName = context.params.project;
-  const projects = await (
-    await fetch("http://localhost:3000/api/fetchProjectsFromAirtable")
-  ).json();
+  const projects = await fetchProjectsFromAirtable();
   const project = projects.find(
     (project) => project.name.toLowerCase().toString() == projectName
   );
