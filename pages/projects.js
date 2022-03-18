@@ -9,7 +9,7 @@ export default function Projects() {
   const [projects, setProjects] = useState([]);
 
   useEffect(() => {
-    const fetchProjects = async () => {
+    const fetchProjects = async (req, res) => {
       try {
         const response = await fetchProjectsFromAirtable();
         setProjects(response);
