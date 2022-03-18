@@ -9,9 +9,7 @@ export const skillsTable = base("skills");
 
 const dev = process.env.NODE_ENV !== "production";
 
-export const server = dev
-  ? "http://localhost:3000"
-  : "https://antoniobeltran.vercel.app";
+export const server = dev ? "http://localhost:3000" : "";
 
 export const fetchProjectsFromAirtable = async () => {
   const projects = await (
