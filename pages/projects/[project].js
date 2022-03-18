@@ -15,10 +15,11 @@ export const getStaticPaths = async () => {
         });
         fetchNextPage();
       });
+      console.log({ projects });
       return projects;
     } catch (e) {
       return console.log({
-        message: "there was an error retrieving the records",
+        message: "there was an error retrieving the records for paths",
         e,
       });
     }
@@ -47,10 +48,11 @@ export const getStaticProps = async (context) => {
         });
         fetchNextPage();
       });
+      console.log({ projects });
       return projects;
     } catch (e) {
       return console.log({
-        message: "there was an error retrieving the records",
+        message: "there was an error retrieving the records for props",
         e,
       });
     }
